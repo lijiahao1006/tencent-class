@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>home</h1>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import IndexData from "../service/getIndexData";
+const indexdata = new IndexData();
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  name: "Home",
+  data() {
+    return {
+      data: null
+    };
+  },
+  mounted() {
+    this.getCourseData();
+  },
+  methods: {
+    async getCourseData() {
+      await indexdata.getIndexData().then(data => {
+        this.data = data;
+        console.log("index", this.data);
+      });
+    }
   }
-}
+};
 </script>
