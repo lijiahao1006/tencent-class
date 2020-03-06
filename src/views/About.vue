@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>about</h1>
+    <div class="wrap">nihao</div>
   </div>
 </template>
 
@@ -38,5 +39,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
+// 混入，作为模版
+@import "./style/01.sass";
+
 </style>

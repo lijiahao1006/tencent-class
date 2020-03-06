@@ -1,0 +1,15 @@
+=large
+  font
+  size: 40px
+  weight: bold
+  color: #60b84a
+  @content
+.wrap
+  +large
+  margin-left: 200px // 引入mixin
+  // 大于等于600
+  @media screen and (min-width:600px)
+    background-color: steelblue
+    width: 200px
+    height: 100px
+    border: 1px solid steelblue

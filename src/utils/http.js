@@ -76,7 +76,7 @@ export default class HTTP {
     o.send(type === 'GET' ? null : formatDatas(data));
 
     t = setTimeout(() => {
-      throw new Error('本次请求已超时，API地址：' + url);
+      throw new Error('本次请求已超时了哦，API地址：' + url);
       o.abort();
       clearTimeout(t);
       t = null;
