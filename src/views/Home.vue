@@ -2,8 +2,9 @@
   <div class="home">
     <h1>home</h1>
     <ul>
-      <li style="height:30px;" v-for="i in 100" :key="i">{{i}}</li>
       <div id="box">123box</div>
+      {{ a | guolu }}
+      {{ b | guolu }}
     </ul>
   </div>
 </template>
@@ -19,8 +20,19 @@ export default {
   data() {
     return {
       data: null,
-      data2: null
+      data2: null,
+      a: 100,
+      b: 200
     };
+  },
+  filters: {
+    guolu(val) {
+      if (val === 100) {
+        return '我是a'
+      }else{
+        return 'my name is others'
+      }
+    }
   },
   async mounted() {
     await this.getCourseData();

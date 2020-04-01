@@ -5,6 +5,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link :to="{name: 'List'}">List</router-link>
+      <!-- {{ this }} -->
     </div>
     <hr />
     <transition name="slide-fade">
@@ -14,11 +15,15 @@
 </template> 
 
 <script>
-import boot from './views/Bootstrap'
-
 export default {
-  components: {
-    boot
+  data() {
+    return {
+      set: new Set([1, 2, 3, 3, 4, 5, 6, 4, 4])
+    }
+  },
+  mounted() {
+
+    console.log(this.set)
   }
 }
 </script>
